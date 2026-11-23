@@ -1,0 +1,91 @@
+DUAL 24/11/2026
+----------------------
+sqlplus TEST_USER	
+
+1/ 
+- Zobraz štruktúru tabuliek T_STUDENTS a T_ZOZNAM_SKOLENI.
+- Vypíš všetkých študentov.
+- Vypíš všetky dostupné školenia.
+
+
+2/
+- Do tabuľky T_STUDENTS pridaj nový stĺpec DATUM_NARODENIA typu DATE.
+- Over, či bol stĺpec úspešne vytvorený.
+  pomocka: ALTER TABLE table_name ADD column_name data_type;
+
+
+3/ 
+- Vytvor primárny kľúč na stĺpci ID_ZAZ v tabuľke T_STUDENTS.
+- Vytvor primárny kľúč na stĺpci ID_ZAZ v tabuľke T_ZOZNAM_SKOLENI.
+
+  pomocka: ALTER TABLE table_name ADD CONSTRAINT constraint_name PRIMARY KEY (column);
+           Pred vytvorením over, či sú hodnoty unikátne
+
+
+4. Vytvorenie UNIQUE constraint
+- Zabezpeč, aby každý študent mal unikátne osobné číslo PER_NUM.
+- Zabezpeč, aby každé školenie malo unikátny kód KOD.
+
+  pomocka: ALTER TABLE table_name ADD CONSTRAINT unique_constraint_name UNIQUE(column_name);
+
+5/ 
+- Vypíš študentov, ktorých osobné číslo PER_NUM je väčšie ako 100000
+- Vypíš iba meno, priezvisko a email študentov z tabulky T_STUDENTS
+
+6/ 
+- Vyhľadaj všetkých študentov, ktorých meno začína na písmeno A  (pouzi: like)
+- Vyhľadaj študentov, ktorích email konci na 'tele-kom.de' 
+
+7/
+- Vypíš školenia, ktorých cena je medzi 100 a 500 EUR.
+
+
+8/
+- Vlož do tabuľky T_STUDENTS nového študenta, tzn:
+- Vyplň ID_ZAZ, PER_NUM, meno, priezvisko, email a telefón.
+- Over, či bol záznam úspešne vložený.
+
+
+9/
+- Vlož do tabuľky T_ZOZNAM_SKOLENI nové školenie.
+- Zadaj jeho ID, kód, názov, formu realizácie, trvanie a cenu.
+
+
+10/
+- Zmeň telefónne číslo pre študenta: Benjamin Lara
+- Aktualizuj jeho emailovú adresu.
+- Zmenu vykonaj pomocou UPDATE s podmienkou WHERE.
+
+
+11/
+- Vytvor záložnú tabuľku T_STUDENTS_BCK, ktorá bude obsahovať všetky záznamy z tabuľky T_STUDENTS 
+- Vytvor záložnú tabuľku T_ZOZNAM_SKOLENI_BCK, ktorá bude obsahovať všetky záznamy z tabuľky T_ZOZNAM_SKOLENI
+  pomocka: CREATE TABLE table_name as SELECT ...
+- Vytvor ďalšiu záložnú tabuľku T_ONLINE_SKOLENIA_BCK, ktorá bude obsahovať iba online školenia.
+- Porovnaj počet záznamov v originálnych a záložných tabuľkách.
+
+
+12/ 
+- Odstráň konkrétne školenie podľa jeho kódu - ED13698
+- Pred odstránením si zobraz záznam pomocou SELECT.
+- Over, či bol záznam odstránený.
+
+
+13/ 
+- vytvorte novu tabulku T_PRIHLASENY 
+  mena stlpcov tabulky budu:
+  id_zaz
+  per_number
+  kod
+  comment
+
+
+14/ 
+- Nahlaste studentov na skolenia , teda vlozte zaznamy do tabulky T_PRIHLASENY (aspon 3 riadky)
+- Over, či boli záznami pridane
+
+
+
+
+
+
